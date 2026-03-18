@@ -12,6 +12,7 @@ Sockets Links.
 4. Send and receive the message using the send function in socket.
 ## PROGRAM
 server
+~~~
 import socket
 s=socket.socket()
 s.bind(('localhost',8001))
@@ -20,8 +21,9 @@ c,addr=s.accept()
 while True:
     ClientMessage=c.recv(1024).decode()
     c.send(ClientMessage.encode())
-
+~~~
 client
+~~~
 import socket
 
 s = socket.socket()
@@ -31,6 +33,8 @@ while True:
     ip = input("Enter Logical Address (IP): ")
     s.send(ip.encode())
     print("MAC Address:", s.recv(1024).decode())
+~~~
+
 ## OUPUT
 server
 <img width="777" height="332" alt="Screenshot 2026-03-18 083936" src="https://github.com/user-attachments/assets/78dbbb61-4d98-4e18-9c2c-09711fe1c8e1" />
